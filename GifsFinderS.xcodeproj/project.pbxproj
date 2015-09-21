@@ -40,6 +40,9 @@
 		9D87460F1BAF495C00801CF3 /* OriginalStill.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8746001BAF495C00801CF3 /* OriginalStill.m */; };
 		9D8746121BAF5B4300801CF3 /* GifsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8746111BAF5B4300801CF3 /* GifsItem.m */; };
 		9D8746161BAF5BC700801CF3 /* ImageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8746151BAF5BC700801CF3 /* ImageHelper.m */; };
+		9DD9B2261BB067B800C2A814 /* ImageDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD9B2241BB067B800C2A814 /* ImageDetailsViewController.swift */; };
+		9DD9B22A1BB069F300C2A814 /* DetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD9B2281BB069F300C2A814 /* DetailsCell.swift */; };
+		9DD9B22B1BB069F300C2A814 /* DetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DD9B2291BB069F300C2A814 /* DetailsCell.xib */; };
 		BFE131F5F0D9E2EA8AE1A489 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C5DEDD6DDDCE6D22C6658825 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -113,6 +116,9 @@
 		9D8746111BAF5B4300801CF3 /* GifsItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GifsItem.m; sourceTree = "<group>"; };
 		9D8746141BAF5BC700801CF3 /* ImageHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageHelper.h; sourceTree = "<group>"; };
 		9D8746151BAF5BC700801CF3 /* ImageHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageHelper.m; sourceTree = "<group>"; };
+		9DD9B2241BB067B800C2A814 /* ImageDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDetailsViewController.swift; sourceTree = "<group>"; };
+		9DD9B2281BB069F300C2A814 /* DetailsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsCell.swift; sourceTree = "<group>"; };
+		9DD9B2291BB069F300C2A814 /* DetailsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailsCell.xib; sourceTree = "<group>"; };
 		A753A9A577CA37C3951A5516 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C5DEDD6DDDCE6D22C6658825 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -223,6 +229,9 @@
 				9D2A4E2B1BA9B6D9008EF073 /* ViewController.swift */,
 				9D5B92DA1BAAFFE5004B753A /* ImageCell.swift */,
 				9D5B92DB1BAAFFE5004B753A /* ImageCell.xib */,
+				9DD9B2241BB067B800C2A814 /* ImageDetailsViewController.swift */,
+				9DD9B2281BB069F300C2A814 /* DetailsCell.swift */,
+				9DD9B2291BB069F300C2A814 /* DetailsCell.xib */,
 			);
 			name = "My Classes";
 			sourceTree = "<group>";
@@ -384,6 +393,7 @@
 				9D2A4E2F1BA9B6D9008EF073 /* Main.storyboard in Resources */,
 				9D5B92DD1BAAFFE5004B753A /* ImageCell.xib in Resources */,
 				9D2A4E341BA9B6D9008EF073 /* LaunchScreen.xib in Resources */,
+				9DD9B22B1BB069F300C2A814 /* DetailsCell.xib in Resources */,
 				9D2A4E311BA9B6D9008EF073 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -447,6 +457,7 @@
 				9D8745E11BAF481E00801CF3 /* GifObject.m in Sources */,
 				9D8746081BAF495C00801CF3 /* FixedHeightStill.m in Sources */,
 				9D8746161BAF5BC700801CF3 /* ImageHelper.m in Sources */,
+				9DD9B22A1BB069F300C2A814 /* DetailsCell.swift in Sources */,
 				9D5B92DC1BAAFFE5004B753A /* ImageCell.swift in Sources */,
 				9D8746041BAF495C00801CF3 /* FixedHeight.m in Sources */,
 				9D2A4E2A1BA9B6D9008EF073 /* GifsFinderS.xcdatamodeld in Sources */,
@@ -456,6 +467,7 @@
 				9D8746051BAF495C00801CF3 /* FixedHeightDownsampled.m in Sources */,
 				9D8746021BAF495C00801CF3 /* DownsizedLarge.m in Sources */,
 				9D8746011BAF495C00801CF3 /* Downsized.m in Sources */,
+				9DD9B2261BB067B800C2A814 /* ImageDetailsViewController.swift in Sources */,
 				9D2A4E271BA9B6D9008EF073 /* AppDelegate.swift in Sources */,
 				9D8746121BAF5B4300801CF3 /* GifsItem.m in Sources */,
 				9D87460D1BAF495C00801CF3 /* FixedWidthStill.m in Sources */,

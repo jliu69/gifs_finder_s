@@ -111,6 +111,7 @@
                                 <exclude reference="xFk-AA-0gR"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="qxd-Oy-PoK"/>
                                 <exclude reference="1o8-eH-yIM"/>
                                 <exclude reference="HZd-BS-3Vk"/>
                                 <exclude reference="wJY-P8-yPZ"/>
@@ -119,7 +120,6 @@
                                 <exclude reference="wMv-BN-CWZ"/>
                                 <exclude reference="psd-DX-RtX"/>
                                 <exclude reference="wOD-fx-M4x"/>
-                                <exclude reference="qxd-Oy-PoK"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -129,6 +129,7 @@
                                 <include reference="xFk-AA-0gR"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="qxd-Oy-PoK"/>
                                 <include reference="1o8-eH-yIM"/>
                                 <include reference="HZd-BS-3Vk"/>
                                 <include reference="wJY-P8-yPZ"/>
@@ -137,7 +138,6 @@
                                 <include reference="wMv-BN-CWZ"/>
                                 <include reference="psd-DX-RtX"/>
                                 <include reference="wOD-fx-M4x"/>
-                                <include reference="qxd-Oy-PoK"/>
                             </mask>
                         </variation>
                     </view>
@@ -149,11 +149,70 @@
                         <outlet property="innerView" destination="xFk-AA-0gR" id="xeM-Z5-Vh5"/>
                         <outlet property="searchBar" destination="NTV-fn-da1" id="T3w-Aa-Jx8"/>
                         <outlet property="tableView" destination="EsF-Br-pBE" id="gLr-9o-Pg5"/>
+                        <segue destination="G1Y-3F-djR" kind="show" identifier="showDetails" id="7h6-5O-W5V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1288.5" y="719"/>
+            <point key="canvasLocation" x="1401" y="719"/>
+        </scene>
+        <!--Image Details View Controller-->
+        <scene sceneID="jEa-pr-XWg">
+            <objects>
+                <viewController id="G1Y-3F-djR" customClass="ImageDetailsViewController" customModule="GifsFinderS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HID-l1-eXp"/>
+                        <viewControllerLayoutGuide type="bottom" id="x0K-9a-OYa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bja-k5-emO">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="myn-id-py8">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="G1Y-3F-djR" id="23R-lZ-6xq"/>
+                                    <outlet property="delegate" destination="G1Y-3F-djR" id="YcQ-Da-9Ti"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="myn-id-py8" secondAttribute="trailing" constant="-16" id="LlN-lk-q0A"/>
+                            <constraint firstItem="x0K-9a-OYa" firstAttribute="top" secondItem="myn-id-py8" secondAttribute="bottom" id="QlJ-5R-EFv"/>
+                            <constraint firstItem="myn-id-py8" firstAttribute="leading" secondItem="bja-k5-emO" secondAttribute="leadingMargin" constant="-16" id="cG9-pk-jez"/>
+                            <constraint firstItem="myn-id-py8" firstAttribute="top" secondItem="HID-l1-eXp" secondAttribute="bottom" id="f1p-py-6t0"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="myn-id-py8"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="LlN-lk-q0A"/>
+                                <exclude reference="cG9-pk-jez"/>
+                                <exclude reference="f1p-py-6t0"/>
+                                <exclude reference="QlJ-5R-EFv"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="myn-id-py8"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="LlN-lk-q0A"/>
+                                <include reference="cG9-pk-jez"/>
+                                <include reference="f1p-py-6t0"/>
+                                <include reference="QlJ-5R-EFv"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="myn-id-py8" id="HmB-eA-UIF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QJ4-AG-QtP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2232" y="719"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1CR-C6-bFV">

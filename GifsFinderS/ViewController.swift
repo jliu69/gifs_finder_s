@@ -15,7 +15,7 @@ class ViewController: UIViewController, UISearchBarDelegate, UITableViewDataSour
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var innerView: UIView!
     
-    
+    var gifsImageArray: [AnyObject] = []
     var rowsArray: [AnyObject] = []
     var gifRowsArray: [AnyObject] = []
     
@@ -30,9 +30,11 @@ class ViewController: UIViewController, UISearchBarDelegate, UITableViewDataSour
             return
         }
         
+        self.innerView.layer.cornerRadius = 10
+        self.innerView.clipsToBounds = true
+        
         self.innerView.hidden = false
         self.view.bringSubviewToFront(self.innerView)
-        
         
         self.rowsArray = NSArray()
         var trendingLink = "http://api.giphy.com/v1/gifs/trending?api_key=dc6zaTOxFJmzC";
@@ -96,21 +98,56 @@ class ViewController: UIViewController, UISearchBarDelegate, UITableViewDataSour
         self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
+    //MARK: - search bar delegate
+    
+    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+        self.searchBar.text = nil
+    }
+    
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        self.searchBar.text = nil
+        self.searchBar.resignFirstResponder()
+    }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        
+        self.searchBar.resignFirstResponder()
+        
+        self.innerView.hidden = false
+        self.view.bringSubviewToFront(self.innerView)
+        
+        var searchContent : String? = self.searchBar.text
+        if (searchContent == nil) {
+            searchContent = ""
+        }
+        
+        searchContent!.stringByReplacingOccurrencesOfString(" ", withString: "+", options: NSStringCompareOptions.LiteralSearch, range: nil)
+        var searchLink = "http://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&q=\(searchContent!)"
+        
+        var loader : ImagesLoader = ImagesLoader()
+        loader.delegate = self
+        loader.gifsWithLink(searchLink)
+    }
+    
     //MARK: - Image Loader delegate
     
     func didReceiveImagesArray(array: [AnyObject]!) {
         
         if let imagesArray = array {
             
+            self.innerView.hidden = true
+            self.view.sendSubviewToBack(self.innerView)
+            
             if (imagesArray.count == 0) {
                 return
             }
             
-            self.innerView.hidden = true
-            self.view.sendSubviewToBack(self.innerView)
+            self.gifsImageArray = imagesArray
+            print("return image array size = \(imagesArray.count) \n")
+            print("gifs image array size = \(self.gifsImageArray.count) \n")
             
             var helper : ImageHelper = ImageHelper()
-            self.rowsArray = helper.displayImageListFrom(imagesArray)
+            self.rowsArray = helper.displayImageListFrom(self.gifsImageArray)
             self.tableView.reloadData()
         }
     }
